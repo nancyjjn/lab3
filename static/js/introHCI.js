@@ -18,6 +18,17 @@ function initializePage() {
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 	$("a.thumbnail").click(projectClick);
+	$("#submitBtn").click(updateProject); 
+}
+
+function updateProject(e) {
+   var projectID = $('#project').val();
+   $(projectID).animate({
+      width: $('#width').val()
+   });
+
+   var newText = $('#description').val();
+   $(projectID + " .project-description").text(newText);
 }
 
 function projectClick(e) { 
